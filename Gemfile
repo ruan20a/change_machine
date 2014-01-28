@@ -3,10 +3,10 @@ ruby '1.9.3'
 
 gem 'activerecord'
 gem 'pry'
-gem "rack-test", require: "rack/test"
 
 
 group :test do
+  gem "rack-test"
   gem 'rspec', '2.14.1'
   gem 'rake'
   gem 'shoulda-matchers'

@@ -1,0 +1,14 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/Amy/ga_wdi/my_change_machine/main.rb": [
+
+      ],
+      "/Users/Amy/ga_wdi/my_change_machine/spec/main_spec.rb": [
+        1,
+        1
+      ]
+    },
+    "timestamp": 1390941662
+  }
+}

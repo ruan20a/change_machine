@@ -17,9 +17,7 @@ end
 task :default => [:spec]
 
 task :spec do
-  RSpec::Core::RakeTask.new(:spec)
-end
-
-RSpec::Core::RakeTask.new(:spec) do |t|
-  t.fail_on_error = false
+  RSpec::Core::RakeTask.new(:spec) do |t|
+    t.fail_on_error = false
+  end
 end

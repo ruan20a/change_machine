@@ -3,6 +3,8 @@ ruby '1.9.3'
 
 gem 'activerecord'
 gem 'pry'
+gem "rack-test", require: "rack/test"
+
 
 group :test do
   gem 'rspec', '2.14.1'

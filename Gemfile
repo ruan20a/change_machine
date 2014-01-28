@@ -3,6 +3,7 @@ ruby '1.9.3'
 
 gem 'activerecord'
 gem 'pry'
+gem 'sinatra'
 
 
 group :test do

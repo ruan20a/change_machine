@@ -2,6 +2,7 @@ require File.dirname(__FILE__) + '/..' + '/machine.rb'
 require File.dirname(__FILE__) + '/spec_helper'
 
 describe Machine do
+  include Rack::Test::Methods
   let(:machine){
     Machine.new
   }
@@ -16,11 +17,13 @@ describe Machine do
       expect(machine.cent_set).to eq({1  => "penny", 5 => "nickel", 10 => "dime", 25 => "quarter"})
     end
 
-    it "has a boolean is_currency to know which set to use" do
-      expect(machine.is_currency).to eq(false)
+    it "is_currency is currently nil" do
+      expect(machine.is_currency).to eq(nil)
     end
 
   end
+
+
 
 
 end

@@ -15,6 +15,21 @@ class Machine
     self.is_currency = nil
   end
 
+  def get_conversion_type
+    while @is_currency.nil? #TODO figureout best way to test TODO
+      print "Do you want to convert currency or cent? (Input \'currency\' or \'cent\')"
+      input = STDIN.gets.chomp #dont use ! with STDIN
+      set_conversion(input)
+    end
+  end
+
+  def set_conversion(input)
+    if input == "currency" || input == "cent"
+      @is_currency = (input == "currency")? true:false
+    else
+      @is_currency = nil
+    end
+  end
 
 
 end

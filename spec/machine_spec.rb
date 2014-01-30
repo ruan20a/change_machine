@@ -49,5 +49,45 @@ describe Machine do
     end
   end
 
+  describe "#get_specific_inputs" do
+    context "when is_currency is false" do
+      it "takes input" do
+        machine.is_currency = false
+        STDIN = StringIO.new("23")
+        expect(machine.get_specific).to eq(23)
+      end
+    end
+
+    # context "when is_currency is false" do
+    #   machine.is_currency = false
+    #   it {expects(machine.ask_specific)}.to eq("")
+    # end
+  end
+
+  describe "#convert_cents" do
+    it "should return a pattern string" do
+      random = (1..100).to_a.sample
+      output = machine.convert_cents(random)
+      output.should match(/\D[a-z]/)
+    end
+
+    it "does not return 0 in a string" do
+      random = (1..100).to_a.sample
+      output = machine.convert_cents(random)
+      output.should_not include "0"
+    end
+
+
+    it "returns the lowest # of coins" do
+      output = machine.convert_cents(4)
+      expect(output).to eq("4 penny")
+    end
+
+    it "returns the lowest # of coins" do
+      output = machine.convert_cents(99)
+      expect(output).to eq("3 quarter, 2 dime, 4 penny")
+    end
+
+  end
 
 end
